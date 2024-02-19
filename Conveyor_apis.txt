@@ -1,0 +1,45 @@
+
+2: 
+Get https://uat.ustpace.com/admin/api/multi-level-filter/portfolios?mode=custom
+3: Get https://uat.ustpace.com/admin/api/multi-level-filter/last-used-filter/179
+4: Get https://uat.ustpace.com/admin/api/multi-level-filter/portfolios?mode=custom&withDisabledApps=true
+5: Post https://uat.ustpace.com/pipeline/api/ci-cd/projects-summary/tiles?searchString=
+	{"projectIds":[327467,328007]} - Get allprojects ? how about release filter ?
+6: POST https://uat.ustpace.com/pipeline/api/ci-cd/projects-summary?page=0&size=10&searchString=
+	{"projectIds":[327467,328007]} - same questions as 5
+7: POST https://uat.ustpace.com/pipeline/api/ci-cd/projects-summary?page=0&size=10&searchString=&enabled=true
+	{"projectIds":[327467,328007]} - same as above
+8: POST https://uat.ustpace.com/pipeline/api/ci-cd/projects-summary?page=0&size=10&searchString=&enabled=false
+	{"projectIds":[327467,328007]} - same as above
+9: POST https://uat.ustpace.com/pipeline/api/ci-cd/projects-summary?page=0&size=10&searchString=CM
+11: Get https://uat.ustpace.com/pipeline/api/ci-cd/templates/filter?searchTerm=Publish&sortBy=RELEVANCE - covered already with single parameter
+15: Get https://uat.ustpace.com/pipeline/api/ci-cd/branching/conditions/toolBranches
+16: POST https://uat.ustpace.com/pipeline/api/ci-cd/repositoryUrl
+		{"groupUnitName":"dagility-testing","projectId":null,"name":"First Project","prefix":"first-project","ownerId":2521,"description":"Project Description","collaboratorsIds":[137767],"enabled":true,"scmToolId":42921,"cicdToolId":null,"components":[{"id":454030,"name":"Admin","templateId":454005,"templateComponentId":454030,"uniqueId":"admin2","pipelineIds":[454033],"overwriteTools":false,"scmToolId":null,"scmGroupUnitId":null,"scmGroupUnitName":null,"cicdToolId":null,"cicdGroupUnitId":null,"cicdGroupUnitName":null,"preferredToolType":null,"cscanToolId":null,"cscanUnitId":null,"cscanUnitName":null,"resources":[]},{"id":454025,"name":"Illuminate","templateId":454005,"templateComponentId":454025,"uniqueId":"illuminate2","pipelineIds":[454028],"overwriteTools":false,"scmToolId":null,"scmGroupUnitId":null,"scmGroupUnitName":null,"cicdToolId":null,"cicdGroupUnitId":null,"cicdGroupUnitName":null,"preferredToolType":null,"cscanToolId":null,"cscanUnitId":null,"cscanUnitName":null,"resources":[]},{"id":454006,"name":"Terraform ","templateId":454005,"templateComponentId":454006,"uniqueId":"terraform","pipelineIds":[],"overwriteTools":false,"scmToolId":null,"scmGroupUnitId":null,"scmGroupUnitName":null,"cicdToolId":null,"cicdGroupUnitId":null,"cicdGroupUnitName":null,"preferredToolType":null,"cscanToolId":null,"cscanUnitId":null,"cscanUnitName":null,"resources":["EC2","Subnet","VPC"]}],"projectLevelPipelineIds":[],"needProjectRepo":false,"needOnCompletion":true,"ownerKeycloakId":null,"ownerNewFromKeycloak":false,"defaultBranch":"main"}
+17: Get https://uat.ustpace.com/pipeline/api/ci-cd/repositoryExist
+		{"projectId":null,"name":"First Project","prefix":"first-project","ownerId":2521,"description":"Project Description","collaboratorsIds":[137767],"enabled":true,"scmToolId":42921,"cicdToolId":14101,"components":[{"id":454030,"name":"Admin","templateId":454005,"templateComponentId":454030,"uniqueId":"admin2","pipelineIds":[454033],"overwriteTools":false,"scmToolId":null,"scmGroupUnitId":null,"scmGroupUnitName":null,"cicdToolId":null,"cicdGroupUnitId":null,"cicdGroupUnitName":null,"preferredToolType":null,"cscanToolId":null,"cscanUnitId":null,"cscanUnitName":null,"resources":[]},{"id":454025,"name":"Illuminate","templateId":454005,"templateComponentId":454025,"uniqueId":"illuminate2","pipelineIds":[454028],"overwriteTools":false,"scmToolId":null,"scmGroupUnitId":null,"scmGroupUnitName":null,"cicdToolId":null,"cicdGroupUnitId":null,"cicdGroupUnitName":null,"preferredToolType":null,"cscanToolId":null,"cscanUnitId":null,"cscanUnitName":null,"resources":[]},{"id":454006,"name":"Terraform ","templateId":454005,"templateComponentId":454006,"uniqueId":"terraform","pipelineIds":[],"overwriteTools":false,"scmToolId":null,"scmGroupUnitId":null,"scmGroupUnitName":null,"cicdToolId":null,"cicdGroupUnitId":null,"cicdGroupUnitName":null,"preferredToolType":null,"cscanToolId":null,"cscanUnitId":null,"cscanUnitName":null,"resources":["EC2","Subnet","VPC"]}],"projectLevelPipelineIds":[],"needProjectRepo":false,"needOnCompletion":true,"ownerKeycloakId":null,"ownerNewFromKeycloak":false,"defaultBranch":"main","groupUnitId":102450,"groupUnitName":"dagility-testing","cicdGroupUnitId":14049,"cicdGroupUnitName":"dagility-testing","gitOpsToolId":null}
+18: Post https://uat.ustpace.com/pipeline/api/ci-cd/createProjectByTemplate
+		{"projectId":null,"name":"first-project","prefix":"first-project","ownerId":2521,"description":"","collaboratorsIds":[],"enabled":true,"scmToolId":42921,"cicdToolId":14101,"components":[{"id":454030,"name":"Admin","templateId":454005,"templateComponentId":454030,"uniqueId":"admin2","pipelineIds":[454033],"overwriteTools":true,"scmToolId":42921,"scmGroupUnitId":102450,"scmGroupUnitName":"dagility-testing","cicdToolId":14101,"cicdGroupUnitId":14049,"cicdGroupUnitName":"dagility-testing","preferredToolType":"CISRV_JENKINS","cscanToolId":17721,"cscanUnitId":17758,"cscanUnitName":"calibrate-ui","resources":[]},{"id":454025,"name":"Illuminate","templateId":454005,"templateComponentId":454025,"uniqueId":"illuminate2","pipelineIds":[454028],"overwriteTools":false,"scmToolId":null,"scmGroupUnitId":null,"scmGroupUnitName":null,"cicdToolId":null,"cicdGroupUnitId":null,"cicdGroupUnitName":null,"preferredToolType":null,"cscanToolId":null,"cscanUnitId":null,"cscanUnitName":null,"resources":[]},{"id":454006,"name":"Terraform ","templateId":454005,"templateComponentId":454006,"uniqueId":"terraform","pipelineIds":[],"overwriteTools":false,"scmToolId":null,"scmGroupUnitId":null,"scmGroupUnitName":null,"cicdToolId":null,"cicdGroupUnitId":null,"cicdGroupUnitName":null,"preferredToolType":null,"cscanToolId":null,"cscanUnitId":null,"cscanUnitName":null,"resources":["EC2","Subnet","VPC"]}],"projectLevelPipelineIds":[],"needProjectRepo":false,"needOnCompletion":true,"ownerKeycloakId":null,"ownerNewFromKeycloak":false,"defaultBranch":"main","groupUnitId":102450,"groupUnitName":"dagility-testing","cicdGroupUnitId":14049,"cicdGroupUnitName":"dagility-testing","gitOpsToolId":null}
+		
+		
+1: Get https://uat.ustpace.com/insight/api/insights/dashboardByIdentifier/CI_CD_PORTFOLIO_SUMMARY_PROJECTS 
+10: Get https://uat.ustpace.com/pipeline/api/ci-cd/projects/checkExistsByPrefix?prefix=first-project
+19: Get https://uat.ustpace.com/admin/api/v2/projects/327467/settings	
+20: Get https://uat.ustpace.com/pipeline/api/ci-cd/projectCreationState/327467
+21: Get https://uat.ustpace.com/pipeline/api/validation/issues/327467/count
+12: Get https://uat.ustpace.com/pipeline/api/ci-cd/templates/454005/comparing
+13: Get https://uat.ustpace.com/pipeline/api/ci-cd/templates/454005/workflows
+14: Get https://uat.ustpace.com/pipeline/api/ci-cd/templates/data-by-ids?templateIds=454005&needCheck=true
+	
+======================
+Set 2:
+
+Get https://sit.ustpace.com/pipeline/api/jobs-management/pipeline-summary/filters
+POST https://sit.ustpace.com/pipeline/api/jobs-management/pipeline-summary/tiles
+GET https://sit.ustpace.com/pipeline/api/jobs-management/monitor-subscriptions/82dbf8a2fbc1-1/ping
+Get https://sit.ustpace.com/pipeline/api/jobs-management/job-details?toolId=887405&name=edgeops-insight-module&project=4 ? get dynamic tool id
+
+
+POST https://sit.ustpace.com/pipeline/api/jobs-management/pipeline-summary?page=0&size=10
+
+	
